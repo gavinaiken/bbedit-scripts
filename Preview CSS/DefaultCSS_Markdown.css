@@ -87,3 +87,32 @@ code {
     border-radius: 3px;
     white-space: pre;
 }
+
+table {
+    display: table;
+    width: 100%;
+    overflow: auto;
+    word-break: normal;
+    border-collapse: collapse;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+table tr {
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+}
+
+table tr:nth-child(2n) {
+    background-color: #f8f8f8;
+}
+
+table th, table td {
+    padding: 6px;
+    border: 1px solid #ddd;
+    display: table-cell;
+}
+
+table th {
+    font-weight: bold;
+}
