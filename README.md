@@ -4,16 +4,33 @@ Setting up Github Markdown previews in BBEdit
 
 1. Install redcarpet gem, as used by Github [(see details here)](https://github.com/github/markup/tree/master)
 
-    ```javascript
-    gem install redcarpet
+    ```shell
+    $ gem install redcarpet
     ```
 
-2. `$ cd Library/Application\ Support/BBEdit/`
+2. Change directory to the BBEdit application support location, and create the Packages
+directory if it isn't already there:
 
-3. `$ mkdir Packages` # if it doesn't already exists
+    ```shell
+    $ cd ~/Library/Application\ Support/BBEdit/
+    $ [ ! -d Packages ] && mkdir Packages
+    ```
+    
+3. Enter the package directory and clone the github repo to an appropriately named
+directory:
 
-4. `$ cd Packages`
+    ```shell
+    $ cd Packages
+    $ git clone https://github.com/gavinaiken/bbedit-scripts markdown-github.bbpackage
+    ```
 
-5. `$ git clone https://github.com/gavinaiken/bbedit-scripts markdown-github.bbpackage`
+4. Optionally, if you want to make the Github Flavored Markdown preview style the default
+for all markdown files, you can add symlinks to the css and filter files using the
+included script, i.e.:
 
-6. Now use ```Markup > Preview in BBEdit``` on any markdown.
+    ```shell
+    $ cd ~/Library/Application\ Support/BBEdit/Packages/markdown-github.bbpackage
+    $ ./create-symlinks.sh
+    ```
+
+5. Now use ```Markup > Preview in BBEdit``` on any markdown.
