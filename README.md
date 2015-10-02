@@ -21,7 +21,7 @@ directory:
 
     ```shell
     $ cd Packages
-    $ git clone git@github.com:gavinaiken/bbedit-scripts.git markdown-github.bbpackage
+    $ git clone https://github.com/gavinaiken/bbedit-scripts.git markdown-github.bbpackage
     ```
 
 4. Optionally, if you want to make the Github Flavored Markdown preview style the default
