@@ -1,4 +1,4 @@
-#!/usr/local/var/rbenv/versions/2.1.2/bin/ruby
+#!/usr/bin/env ruby
 
 require 'rubygems'
 require 'redcarpet'
