@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'rubygems'
 require 'redcarpet'
 
 r = Redcarpet::Markdown.new(Redcarpet::Render::HTML, 
