@@ -92,6 +92,20 @@ code {
     white-space: pre;
 }
 
+blockquote {
+    padding: 0 1em;
+    color: #59636E;
+    border-left: .25em solid #D0D9E0;
+}
+
+blockquote > :first-child {
+    margin-top:0
+}
+
+blockquote > :last-child {
+    margin-bottom:0
+}
+
 table {
     display: table;
     width: 100%;
