@@ -66,21 +66,12 @@ h1 + p, h2 + p, h3 + p {
 	margin-top: 10px;
 }
 
-pre {
-    overflow: auto;
-	background-color: #f8f8f8;
+img {
+	max-width: 100%;
 }
 
-pre code {
-	border-radius: 3px;
-	font-family: Consolas, "Liberation Mono", Courier, monospace;
-	font-size: 14px;
-	line-height: 1.4em;
-	margin: 0 2px;
-    padding: 16px;
-	white-space: pre;
-	display: block;
-	word-wrap: normal;
+pre {
+  overflow: auto;
 }
 
 code {
@@ -90,7 +81,21 @@ code {
     font-size: 85%;
     border-radius: 3px;
     white-space: pre;
+    background-color: #f8f8f8;
 }
+
+pre code {
+	border-radius: 3px;
+	font-family: Consolas, "Liberation Mono", Courier, monospace;
+	font-size: 14px;
+	line-height: 1.4em;
+	margin: 0 2px;
+  padding: 16px;
+	white-space: pre;
+	display: block;
+	word-wrap: normal;
+}
+
 
 blockquote {
     padding: 0 1em;
