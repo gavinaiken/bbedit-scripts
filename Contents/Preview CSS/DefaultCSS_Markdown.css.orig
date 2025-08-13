@@ -1,5 +1,4 @@
 body {
-<<<<<<< ours
     background-color: #fff;
     color: #333;
     font: 16px 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
@@ -24,43 +23,16 @@ p, blockquote, ul, ol, dl, table, pre {
 
 ul, ol {
     padding-left: 30px;
-=======
-  background-color: #fff;
-  color: #333;
-  font: 16px 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
-  word-wrap: break-word;
-  line-height: 1.6;
-  padding: 0 20px 20px 20px;
-  width: 722px;
-}
-
-a {
-  color: #4183c4;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-p, blockquote, ul, ol, dl, table, pre {
-  margin: 15px 0;
-}
-
-ul, ol {
-  padding-left: 30px;
->>>>>>> theirs
 }
 
 h1 {
-  padding-bottom: 0.3em;
-  font-size: 2.25em;
-  line-height: 1.2;
-  border-bottom: 1px solid #eee;
+    padding-bottom: 0.3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
 }
 
 h2 {
-<<<<<<< ours
     border-bottom: 1px solid #eee;
     color: #000;
     padding-bottom: 0.3em;
@@ -96,43 +68,6 @@ h1 + p, h2 + p, h3 + p {
 
 img {
     max-width: 100%;
-=======
-  border-bottom: 1px solid #eee;
-  color: #000;
-  padding-bottom: 0.3em;
-  font-size: 1.75em;
-  line-height: 1.225;
-}
-
-h3 {
-  font-size: 1.5em;
-}
-
-h4 {
-  font-size: 1.2em;
-}
-
-h5 {
-      font-size: 1.0em;
-}
-
-h6 {
-  color: #777;
-  font-size: 1.0em;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
-  margin: 1em 0 15px 0;
-}
-
-h1 + p, h2 + p, h3 + p {
-  margin-top: 10px;
-}
-
-img {
-  max-width: 100%;
->>>>>>> theirs
 }
 
 pre {
@@ -140,17 +75,16 @@ pre {
 }
 
 code {
-  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  padding: 0.4em;
-  margin: 0;
-  font-size: 85%;
-  border-radius: 3px;
-  white-space: pre;
-  background-color: #f8f8f8;
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    padding: 0.4em;
+    margin: 0;
+    font-size: 85%;
+    border-radius: 3px;
+    white-space: pre;
+    background-color: #f8f8f8;
 }
 
 pre code {
-<<<<<<< ours
     border-radius: 3px;
     font-family: Consolas, "Liberation Mono", Courier, monospace;
     font-size: 14px;
@@ -160,24 +94,13 @@ pre code {
     white-space: pre;
     display: block;
     word-wrap: normal;
-=======
-  border-radius: 3px;
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
-  font-size: 14px;
-  line-height: 1.4em;
-  margin: 0 2px;
-  padding: 16px;
-  white-space: pre;
-  display: block;
-  word-wrap: normal;
->>>>>>> theirs
 }
 
 
 blockquote {
-  padding: 0 1em;
-  color: #59636E;
-  border-left: .25em solid #D0D9E0;
+    padding: 0 1em;
+    color: #59636E;
+    border-left: .25em solid #D0D9E0;
 }
 
 blockquote > :first-child {
@@ -189,32 +112,125 @@ blockquote > :last-child {
 }
 
 table {
-  display: table;
-  width: 100%;
-  overflow: auto;
-  word-break: normal;
-  border-collapse: collapse;
-  margin-top: 0;
-  margin-bottom: 16px;
+    display: table;
+    width: 100%;
+    overflow: auto;
+    word-break: normal;
+    border-collapse: collapse;
+    margin-top: 0;
+    margin-bottom: 16px;
 }
 
 table tr {
-  background-color: #fff;
-  border-top: 1px solid #ccc;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
 }
 
 table tr:nth-child(2n) {
-  background-color: #f8f8f8;
+    background-color: #f8f8f8;
 }
 
 table th, table td {
-  padding: 6px;
-  border: 1px solid #ddd;
-  display: table-cell;
+    padding: 6px;
+    border: 1px solid #ddd;
+    display: table-cell;
 }
 
 table th {
+    font-weight: bold;
+<<<<<<< ours
+}
+
+/* Syntax Highlighting */
+
+.highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+
+.highlight, .highlight .w
+{
+    color: #24292f;
+    background-color: #f6f8fa;
+}
+
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt, .highlight .kv { color: #cf222e; }
+.highlight .gr { color: #f6f8fa; }
+
+.highlight .gd
+{
+    color: #82071e;
+    background-color: #ffebe9;
+}
+
+.highlight .nb { color: #953800; }
+.highlight .nc { color: #953800; }
+.highlight .no { color: #953800; }
+.highlight .nn { color: #953800; }
+.highlight .sr { color: #116329; }
+.highlight .na { color: #116329; }
+.highlight .nt { color: #116329; }
+
+.highlight .gi
+{
+    color: #116329;
+    background-color: #dafbe1;
+}
+
+.highlight .ges
+{
+    font-weight: bold;
+    font-style: italic;
+}
+
+.highlight .kc { color: #0550ae; }
+.highlight .l, .highlight .ld, .highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx { color: #0550ae; }
+.highlight .sb { color: #0550ae; }
+.highlight .bp { color: #0550ae; }
+.highlight .ne { color: #0550ae; }
+.highlight .nl { color: #0550ae; }
+.highlight .py { color: #0550ae; }
+.highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi, .highlight .vm { color: #0550ae; }
+.highlight .o, .highlight .ow { color: #0550ae; }
+
+.highlight .gh
+{
+    color: #0550ae;
+    font-weight: bold;
+}
+
+.highlight .gu
+{
+    color: #0550ae;
+    font-weight: bold;
+}
+
+.highlight .s, .highlight .sa, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .sx, .highlight .s1, .highlight .ss { color: #0a3069; }
+.highlight .nd { color: #8250df; }
+.highlight .nf, .highlight .fm { color: #8250df; }
+
+.highlight .err
+{
+    color: #f6f8fa;
+    background-color: #82071e;
+}
+
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cp, .highlight .cpf, .highlight .c1, .highlight .cs { color: #6e7781; }
+.highlight .gl { color: #6e7781; }
+.highlight .gt { color: #6e7781; }
+.highlight .ni { color: #24292f; }
+.highlight .si { color: #24292f; }
+
+.highlight .ge
+{
+    color: #24292f;
+    font-style: italic;
+}
+
+.highlight .gs
+{
+    color: #24292f;
   font-weight: bold;
+=======
+>>>>>>> theirs
 }
 
 /* Syntax Highlighting */
