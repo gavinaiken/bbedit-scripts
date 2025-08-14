@@ -140,6 +140,87 @@ table th {
     font-weight: bold;
 }
 
+/* Github Alerts */
+
+.alert {
+    --color-note: #0969da;
+    --color-tip: #1a7f37;
+    --color-warning: #9a6700;
+    --color-severe: #bc4c00;
+    --color-caution: #d1242f;
+    --color-important: #8250df;
+}
+
+.alert {
+    padding: 0.5rem 1rem;
+    margin-bottom: 16px;
+    color: inherit;
+    border-left: .25em solid #888;
+}
+
+.alert>:first-child {
+    margin-top: 0
+}
+
+.alert>:last-child {
+    margin-bottom: 0
+}
+
+.alert .alert-title {
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    line-height: 1
+}
+
+.alert .alert-title .octicon {
+    margin-right: 0.5rem;
+    display: inline-block;
+    overflow: visible !important;
+    vertical-align: text-bottom;
+    fill: currentColor;
+}
+
+.alert.alert-note {
+    border-left-color: var(--color-note);
+}
+
+.alert.alert-note .alert-title {
+    color: var(--color-note);
+}
+
+.alert.alert-important {
+    border-left-color: var(--color-important);
+}
+
+.alert.alert-important .alert-title {
+    color: var(--color-important);
+}
+
+.alert.alert-warning {
+    border-left-color: var(--color-warning);
+}
+
+.alert.alert-warning .alert-title {
+    color: var(--color-warning);
+}
+
+.alert.alert-tip {
+    border-left-color: var(--color-tip);
+}
+
+.alert.alert-tip .alert-title {
+    color: var(--color-tip);
+}
+
+.alert.alert-caution {
+    border-left-color: var(--color-caution);
+}
+
+.alert.alert-caution .alert-title {
+    color: var(--color-caution);
+}
+
 /* Syntax Highlighting */
 
 .highlight table td { padding: 5px; }
