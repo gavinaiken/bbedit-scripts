@@ -1,6 +1,16 @@
+:root {
+    --body-text: rgb(31, 35, 40);
+    --body-text-muted: rgb(89, 99, 110);
+    --hyperlink: rgb(65, 131, 196);
+    --bg: rgb(255, 255, 255);
+    --bg-muted: rgb(246, 248, 250);
+    --rules: rgb(209, 217, 224);
+    --rules-muted: rgba(209, 217, 224, 0.7);
+}
+
 body {
-    background-color: #fff;
-    color: #333;
+    background-color: var(--bg);
+    color: var(--body-text);
     font: 16px 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
     word-wrap: break-word;
     line-height: 1.6;
@@ -9,7 +19,7 @@ body {
 }
 
 a {
-    color: #4183c4;
+    color: var(--hyperlink);;
     text-decoration: none;
 }
 
@@ -21,6 +31,23 @@ p, blockquote, ul, ol, dl, table, pre {
     margin: 15px 0;
 }
 
+blockquote {
+    padding: 0 1em;
+    border-left: .25em solid var(--rules);
+}
+
+blockquote > :first-child {
+    margin-top:0
+}
+
+blockquote > :last-child {
+    margin-bottom:0
+}
+
+blockquote p {
+    color: var(--body-text-muted);
+}
+
 ul, ol {
     padding-left: 30px;
 }
@@ -29,15 +56,14 @@ h1 {
     padding-bottom: 0.3em;
     font-size: 2.25em;
     line-height: 1.2;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--rules-muted);
 }
 
 h2 {
-    border-bottom: 1px solid #eee;
-    color: #000;
     padding-bottom: 0.3em;
     font-size: 1.75em;
     line-height: 1.225;
+    border-bottom: 1px solid var(--rules-muted);
 }
 
 h3 {
@@ -49,11 +75,11 @@ h4 {
 }
 
 h5 {
-            font-size: 1.0em;
+    font-size: 1.0em;
 }
 
 h6 {
-    color: #777;
+    color: var(--body-text-muted);;
     font-size: 1.0em;
 }
 
@@ -70,6 +96,13 @@ img {
     max-width: 100%;
 }
 
+hr {
+    background-color: var(--rules);
+    display: block; height: 1px;
+    border: 0; border-top: 2px solid #ccc;
+    margin: 1em 0; padding: 0;
+}
+
 pre {
     overflow: auto;
 }
@@ -81,7 +114,7 @@ code {
     font-size: 85%;
     border-radius: 3px;
     white-space: pre;
-    background-color: #f8f8f8;
+    background-color: var(--bg-muted);
 }
 
 pre code {
@@ -96,21 +129,6 @@ pre code {
     word-wrap: normal;
 }
 
-
-blockquote {
-    padding: 0 1em;
-    color: #59636E;
-    border-left: .25em solid #D0D9E0;
-}
-
-blockquote > :first-child {
-        margin-top:0
-}
-
-blockquote > :last-child {
-        margin-bottom:0
-}
-
 table {
     display: table;
     width: 100%;
@@ -122,17 +140,17 @@ table {
 }
 
 table tr {
-    background-color: #fff;
-    border-top: 1px solid #ccc;
+    background-color: var(--bg);
+    border-top: 1px solid var(--rules-muted);
 }
 
 table tr:nth-child(2n) {
-    background-color: #f8f8f8;
+    background-color: var(--bg-muted);
 }
 
 table th, table td {
     padding: 6px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--rules);
     display: table-cell;
 }
 
@@ -140,22 +158,22 @@ table th {
     font-weight: bold;
 }
 
-/* Github Alerts */
+/* Github alerts */
 
 .alert {
-    --color-note: #0969da;
-    --color-tip: #1a7f37;
-    --color-warning: #9a6700;
-    --color-severe: #bc4c00;
-    --color-caution: #d1242f;
-    --color-important: #8250df;
+    --color-note: rgb( 9, 105, 218);
+    --color-tip: rgb(26, 127, 55);
+    --color-warning: rgb(154, 103, 0);
+    --color-severe: rgb(188, 76, 0);
+    --color-caution: rgb(209, 36, 47);
+    --color-important: rgb(130, 80, 223);
 }
 
 .alert {
     padding: 0.5rem 1rem;
     margin-bottom: 16px;
     color: inherit;
-    border-left: .25em solid #888;
+    border-left: .25em solid var(--rules);
 }
 
 .alert>:first-child {
@@ -221,7 +239,7 @@ table th {
     color: var(--color-caution);
 }
 
-/* Syntax Highlighting */
+/* Syntax highlighting for code blocks*/
 
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
