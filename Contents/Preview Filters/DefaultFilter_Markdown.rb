@@ -31,12 +31,12 @@ class SyntaxHighlightRenderer < Redcarpet::Render::HTML
 
     def preprocess(markdown_doc)
         nested_md = Redcarpet::Markdown.new(self, {})
-        markdown_doc.gsub!(/^> \[!(?<type>NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\n> (?<content>.+\n)/) do | match |
+        markdown_doc.gsub!(/^> \[!(?<type>NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]$\n(?<content>^> .*\n)+/) do | match |
             type = $~[:type].downcase.to_sym
             %Q(
                 \n<div class="alert alert-#{type.downcase}">
                     <p class='alert-title'>#{ICONS[type]} #{type.capitalize}</p>
-                    #{nested_md.render($~[:content])}
+                    #{nested_md.render($~[:content].gsub!(/^> /, ''))}
                 </div>
             )
         end
