@@ -24,19 +24,31 @@ class SyntaxHighlightRenderer < Redcarpet::Render::HTML
         warning: %q(<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="octicon"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>),
         caution: %q(<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="octicon"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>)
     }
+    
+    RENDER_OPTIONS = {
+        :autolink => true,
+        :space_after_headers => true,
+        :fenced_code_blocks => true,
+        :disable_indented_code_blocks => true,
+        :no_intra_emphasis => true,
+        :lax_html_blocks => true,
+        :strikethrough =>true,
+        :tables => true
+    }
 
     def initialize(extensions = {})
         super extensions.merge(link_attributes: { target: '_blank' })
     end
 
     def preprocess(markdown_doc)
-        nested_md = Redcarpet::Markdown.new(self, {})
-        markdown_doc.gsub!(/^> \[!(?<type>NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]$\n(?<content>^> .*\n)+/) do | match |
+        nested_md = Redcarpet::Markdown.new(self, RENDER_OPTIONS)
+        markdown_doc.gsub!(/^> \[!(?<type>NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]$\n(?<content>^> [\s\S]*?^$)/) do | match |
             type = $~[:type].downcase.to_sym
+            content = nested_md.render($~[:content].gsub(/^> /, ''))
             %Q(
                 \n<div class="alert alert-#{type.downcase}">
                     <p class='alert-title'>#{ICONS[type]} #{type.capitalize}</p>
-                    #{nested_md.render($~[:content].gsub!(/^> /, ''))}
+                    #{content}
                 </div>
             )
         end
@@ -44,17 +56,7 @@ class SyntaxHighlightRenderer < Redcarpet::Render::HTML
     end
 end
 
-md_to_html = Redcarpet::Markdown.new(
-    SyntaxHighlightRenderer, 
-    :autolink => true,
-    :space_after_headers => true,
-    :fenced_code_blocks => true,
-    :disable_indented_code_blocks => true,
-    :no_intra_emphasis => true,
-    :lax_html_blocks => true,
-    :strikethrough =>true,
-    :tables => true
-  )
+md_to_html = Redcarpet::Markdown.new(SyntaxHighlightRenderer, SyntaxHighlightRenderer::RENDER_OPTIONS)
 
 input_markdown = ARGF.read
 
