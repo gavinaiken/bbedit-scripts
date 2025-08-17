@@ -32,6 +32,7 @@ class SyntaxHighlightRenderer < Redcarpet::Render::HTML
         :disable_indented_code_blocks => true,
         :no_intra_emphasis => true,
         :lax_html_blocks => true,
+        :lax_spacing => true,
         :strikethrough =>true,
         :tables => true
     }
